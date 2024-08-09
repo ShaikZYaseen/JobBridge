@@ -1,0 +1,88 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Logs
+logs
+*.log
+logs/*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+tmp/
+temp/
+
+# Database
+*.sqlite3
+*.db
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore npm global installs
+.global-node-modules/
+
+# Coverage directory used by testing frameworks
+coverage/
+*.lcov
+
+# Temporary files
+*.tmp
+*.swp
+*.swm
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Ignore Jest coverage directory
+coverage/
+
+# Ignore typescript build output
+*.tsbuildinfo
+
+# Ignore MongoDB native binary data
+*.bson
+
+# PM2 process manager files
+.pm2/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Ignore server configuration files
+server.config.js
+server.config.ts
+
+# Ignore any files specific to backend
+app.js
+server.js
