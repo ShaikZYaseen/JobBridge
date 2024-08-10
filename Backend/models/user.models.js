@@ -33,9 +33,17 @@ const userSchema = new Schema(
             type: String,
             required: [true, 'Password is required']
         },
-        isAdmin:{
-            type: Boolean,
-            default:false
+        role:{
+            type:String,
+            enum:['student','recruiter'],
+            required:true
+        },
+        profile:{
+            bio:{type:String},
+            skills:[{type:String}],
+            resume:{type:String}, 
+            resumeOriginalName:{type:String},
+            company:{type:mongoose.Schema.Types.ObjectId, ref:'Company'},
         },
         refreshToken: {
             type: String
