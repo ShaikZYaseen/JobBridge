@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import "./Navbar.css"
 
 //MUi imports
 import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { Avatar, Typography } from '@mui/material';
 
 
@@ -23,7 +26,7 @@ function Navbar() {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
-    let user = true;
+    let user = false;
 
 
     return (
@@ -37,7 +40,9 @@ function Navbar() {
                         <li>Home</li>
                         <li>Jobs</li>
                         <li>Browse</li>
-                    </div>{
+                       
+                    </div>
+                    <div>{
                         !user ? (
                             <div className="navbar-buttons">
                                 <Button size='small' variant="contained" >Signup</Button>
@@ -62,16 +67,20 @@ function Navbar() {
                                         <Avatar sx={{ width: 30, height: 30 }}
                                             alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                                     </div> <p>Shaik Yaseen
-                                    <p className='avatar-desc'>Lorem ipsum dolor sit amet.</p>
+                                            <p className='avatar-desc'>Lorem ipsum dolor sit amet.</p>
 
-                                    </p>
+                                        </p>
                                     </Typography>
+                                    <Link><p className='avatar-two avatar-padding'><span><PermIdentityIcon/></span> view profile</p></Link>
+                                    <Link><p className='avatar-two'><span><LogoutIcon/></span>Logout</p></Link>
+
+
 
                                 </Popover>
-                                
+
                             </div>
                         )
-                    }
+                    }</div>
 
                 </div>
             </div>

@@ -1,0 +1,33 @@
+.login{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginn{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70%;
+    width: 300px;
+    border-radius: 20px;
+    padding-top: 30px;
+    
+   display: flex;
+   flex-direction: column;
+    margin-top: 100px;
+    align-items: center;
+}
+.loginn h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.loginn form{
+    margin-top: 24px;
+}
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+    margin-top: 14px;
+}

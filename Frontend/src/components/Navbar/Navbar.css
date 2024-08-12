@@ -15,7 +15,7 @@
 }
 
 .navbar-logo {
-    margin-left: 10px;
+    margin-left: 14px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder;
 }
@@ -27,9 +27,9 @@
 .navbar-options {
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    width: 17vw;
     justify-content: space-around;
-    
+    align-items: center;
+    width: 20vw;
 }
 
 .avatar{
@@ -42,9 +42,13 @@
 .navbar-content {
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    width: 29vw;
     margin-right: 40px;
+    width: 28vw;
+
+    justify-content: space-between;
+}
+.navbar-buttons{
+    display: flex;
 }
 
 .navbar-buttons Button {
@@ -55,6 +59,7 @@
 .avatar-one{
     display: flex;  
     align-items: center;
+    padding: 0%;
    
 }
 
@@ -63,5 +68,19 @@
 }
 .avatar-one p{
     font-size: 12px;
+}
+.avatar-padding{
+    padding: 2px 0px;
+}
+.avatar-two{
+    margin-left: 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight:400;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
