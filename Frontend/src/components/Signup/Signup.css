@@ -5,10 +5,13 @@
     align-items: center;
     width: 100%;
     margin-top: 40px;
+    padding-bottom: 100px;
 }
 .signupinside{
-    width: 30vw;
-    height: 430px;
+    width:400px;
+    margin-top: 70px;
+    padding: 10px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -18,20 +21,20 @@
 }
 
 .signup h1{
-    padding: 15px 0px;
+    padding: 19px 0px;
     color: #166AC5;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .small-text-field .MuiInputBase-root {
-    font-size: 12px;  /* Adjust font size here */
+    font-size: 15px;  /* Adjust font size here */
   }
 .small-text-field .MuiFormLabel-root {
-    font-size: 12px;  /* Adjust label font size here */
+    font-size: 15px;  /* Adjust label font size here */
   }
-  
+  role-select-label
 
-  .signup form p{
+  .signup form div{
     margin-top: 10px;
     text-align: center;
   }
@@ -40,6 +43,41 @@
     height: 30px;
     font-size: 10px;
     border-radius: 10px;
+    margin-top: 30px;
   }
   
   
+
+  .drop{
+    display: flex;  
+    margin-left: 15px;
+    align-items: baseline;
+    margin-top: 20px;
+  }
+
+  #demo-simple-select-label{
+    margin-right: 10px;
+  }
+  .line{
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 27px;
+  }
+
+  #role-select-label{
+    margin-right: 10px;
+  }
+
+  .css-1x51dt5-MuiInputBase-input-MuiInput-input{
+    margin-top: 20px;
+  }
+
+  .imgdrop{
+    margin-top: 20px;
+  }
+  .submitbtn{
+    text-align: center;
+    margin-top: 17px;
+  }

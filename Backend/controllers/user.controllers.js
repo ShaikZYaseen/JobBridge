@@ -25,6 +25,7 @@ const generateAccessAndRefereshTokens = async(userId) =>{
 }
 
 const registerUser = asyncHandler( async (req, res) => {
+    console.log(req.body)
 
     const {fullName, email, username, password,role } = req.body
 
@@ -32,7 +33,7 @@ const registerUser = asyncHandler( async (req, res) => {
     if (
         !fullName || !email || !username || !password || !role
     ) {
-        throw new apiError(400, "All fields are required")
+        throw new json(apiError(400, "Enter all the fields!"))
     }
 
     const existedUser = await User.findOne({
@@ -56,7 +57,7 @@ const registerUser = asyncHandler( async (req, res) => {
     const avatar = await uploadOnCloudinary(avatarLocalPath)
 
     if (!avatar) {
-        throw new apiError(400, "Avatar file is required")
+        throw new apiError(400, "Avatar file is required");
     }
    
 

@@ -1,17 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar.jsx";
+import axios from "axios";
 import "./Signup.css";
 
-//MUI imports
-import { Button, TextField } from "@mui/material";
+// MUI imports
+import Alert from '@mui/material/Alert';
+import { Button, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function Signup() {
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      console.log("Selected file:", file.name);
-      // You can handle the file upload here
+  const navigate = useNavigate();
+  const [input, setInput] = useState({
+    fullName: "",
+    email: "",
+    username: "",
+    password: "",
+    role: "",
+    file: ""
+  });
+
+  const [alert, setAlert] = useState({ message: "", severity: "" }); // State for the alert
+  const [errors, setErrors] = useState({}); // State for form validation errors
+
+  const changeEventHandler = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  };
+
+  const changeFileHandler = (e) => {
+    setInput({ ...input, file: e.target.files?.[0] });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!input.username) newErrors.username = "Username is required.";
+    if (!input.fullName) newErrors.fullName = "Full name is required.";
+    if (!input.email) newErrors.email = "Email is required.";
+    if (!input.password) newErrors.password = "Password is required.";
+    if (!input.role) newErrors.role = "Role is required.";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // Return true if no errors
+  };
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return; // If validation fails, don't submit the form
+
+    const formData = new FormData(); // FormData object
+    formData.append("fullName", input.fullName);
+    formData.append("username", input.username);
+    formData.append("email", input.email);
+    formData.append("password", input.password);
+    formData.append("role", input.role);
+    if (input.file) {
+      formData.append("file", input.file);
+    }
+
+    try {
+      const res = await axios.post("http://localhost:8000/api/v1/users/signup", formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        withCredentials: true, 
+      });
+
+      if (res.data.success) {
+        setAlert({ message: res.data.message || "Signup successful!", severity: "success" }); // Set success alert
+        setTimeout(() => {
+          navigate("/login")
+        }, 2000);
+        
+
+      }
+    } catch (error) {
+      setAlert({ message: "Signup failed. Please try again.", severity: "error" }); // Set error alert
+      console.log(error.response.data);
     }
   };
 
@@ -21,61 +82,109 @@ function Signup() {
       <div className="signup">
         <div className="signupinside">
           <h1>Sign up</h1>
+          {alert.message && (
+            <Alert severity={alert.severity} style={{ marginBottom: "20px" }}>
+              {alert.message}
+            </Alert>
+          )}
           <div>
-            <form action="">
-              <p>
+            <form onSubmit={submitHandler}>
+              <div>
                 <TextField
-                  id="standard-basic"
-                  label="username"
+                  id="username"
+                  label="Username"
                   variant="standard"
+                  value={input.username}
+                  name="username"
+                  error={!!errors.username}
+                  helperText={errors.username}
                   className="small-text-field"
+                  onChange={changeEventHandler}
                 />
-              </p>
-              <p>
+              </div>
+              <div>
                 <TextField
-                  id="standard-basic"
-                  label="full name"
+                  id="fullName"
+                  label="Full name"
+                  name="fullName"
+                  value={input.fullName}
                   variant="standard"
+                  error={!!errors.fullName}
+                  helperText={errors.fullName}
                   className="small-text-field"
+                  onChange={changeEventHandler}
                 />
-              </p>
-              <p>
+              </div>
+              <div>
                 <TextField
-                  id="standard-basic"
-                  label="email"
+                  id="email"
+                  label="Email"
+                  name="email"
+                  value={input.email}
                   variant="standard"
+                  error={!!errors.email}
+                  helperText={errors.email}
                   className="small-text-field"
+                  onChange={changeEventHandler}
                 />
-              </p>
-              <p>
+              </div>
+              <div>
                 <TextField
-                  id="standard-basic"
-                  label="password"
+                  id="password"
+                  label="Password"
+                  name="password"
+                  type="password" // It's a good practice to hide the password input
+                  value={input.password}
                   variant="standard"
+                  error={!!errors.password}
+                  helperText={errors.password}
                   className="small-text-field"
+                  onChange={changeEventHandler}
                 />
-              </p>
-              <p className="padd">
-                <TextField
-                                  className="small-text-field "
-
-                  type="file"
-                  inputProps={{ accept: ".pdf,.doc,.docx" }} // Specify accepted file types
-                  onChange={handleFileChange}
-                  variant="standard"
-                  sx={{ marginBottom: "16px" }} // Adjust styling as needed
-                />
-                <p> <Button className="submitbutton" variant="contained" color="primary">
-                  Submit
-                </Button></p>
-                <p>already have an account? <Link to="/login">login</Link></p>
-              </p>
+              </div>
+              <div className="padd">
+                <div className="drop">
+                  <InputLabel id="role-select-label">Role :</InputLabel>
+                  <Select
+                    labelId="role-select-label"
+                    value={input.role}
+                    id="role-select"
+                    label="Role"
+                    onChange={changeEventHandler}
+                    name="role"
+                    error={!!errors.role}
+                    sx={{ width: '80px', height: '25px' }} // Adjust width and height as needed
+                  >
+                    <MenuItem value="student">Student</MenuItem>
+                    <MenuItem value="recruiter">Recruiter</MenuItem>
+                  </Select>
+                  {errors.role && (
+                    <p style={{ color: 'red', fontSize: '12px' }}>{errors.role}</p>
+                  )}
+                </div>
+                <div className="imgdrop">
+                  <TextField
+                    className="small-text-field"
+                    type="file"
+                    inputProps={{ accept: ".jpg,.jpeg" }} // Specify accepted file types
+                    onChange={changeFileHandler}
+                    variant="standard"
+                    sx={{ marginBottom: "16px" }} // Adjust styling as needed
+                  />
+                </div>
+                <div className="submitbtn">
+                  <Button className="submitbutton" variant="contained" color="primary" type="submit">
+                    Submit
+                  </Button>
+                </div>
+                <p className="line">Already have an account? <Link to="/login">Login</Link></p>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Signup;

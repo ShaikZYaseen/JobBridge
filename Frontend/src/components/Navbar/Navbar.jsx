@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import "./Navbar.css"
 
 //MUi imports
@@ -15,6 +16,7 @@ function Navbar() {
 
     //MUI methods
     const [anchorEl, setAnchorEl] = useState(null);
+    const navigate = useNavigate();
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -23,6 +25,14 @@ function Navbar() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+   const handleloginclick = ()=>{
+    navigate("/login")
+
+   }
+   const handlesignupclick = ()=>{
+    navigate("/signup")
+
+   }
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
@@ -45,8 +55,8 @@ function Navbar() {
                     <div>{
                         !user ? (
                             <div className="navbar-buttons">
-                                <Button size='small' variant="contained" >Signup</Button>
-                                <Button size="small" variant="outlined" >Login</Button>
+                                <Button size='small' variant="contained" onClick={handlesignupclick}>Signup</Button>
+                                <Button size="small" variant="outlined" onClick={handleloginclick} >Login</Button>
 
                             </div>
                         ) : (

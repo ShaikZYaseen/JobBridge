@@ -13,29 +13,30 @@ function Login() {
             <Navbar />
             <div className="login">
                 <div className="loginn">
-                <h1>Sign up</h1>
+                <h1>Login</h1>
                 <form action="">
                     
 
 
-                    <p>
+                    <div>
                         <TextField
                             id="standard-basic"
                             label="email"
                             variant="standard"
                             className="small-text-field"
                         />
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         <TextField
                             id="standard-basic"
                             label="password"
                             variant="standard"
                             className="small-text-field"
                         />
-                    </p>
-                    <Button className='loginbtn'>Login</Button>
-                    <p>Don't have an account? <Link to="/signup">signup</Link></p>
+                    </div>
+                    <div className='loginbtn'>                    <Button className='loginbtn'>Login</Button>
+                    </div>
+                    <div className='line1'>Don't have an account? <Link to="/signup">signup</Link></div>
                     
                 </form>
             </div>

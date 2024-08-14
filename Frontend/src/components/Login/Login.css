@@ -31,3 +31,16 @@ form{
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
     margin-top: 14px;
 }
+.loginn h1{
+    color: #166AC5;
+}
+
+.loginbtn{
+    margin-top: 10px;
+}
+
+.line1{
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

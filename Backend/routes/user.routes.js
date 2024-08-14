@@ -10,7 +10,7 @@ const userRouter = Router();
 
  userRouter
  .route("/signup")
- .post(upload.single('avatar'),registerUser)
+ .post(upload.single('file'),registerUser)
  
  userRouter
  .route("/login")
