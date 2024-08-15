@@ -63,7 +63,7 @@ function Signup() {
       });
 
       if (res.data.success) {
-        setAlert({ message: res.data.message || "Signup successful!", severity: "success" }); // Set success alert
+        setAlert({ message: res.data.message || "Signup successful!", severity: "success" }); 
         setTimeout(() => {
           navigate("/login")
         }, 2000);
