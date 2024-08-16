@@ -45,7 +45,7 @@ function Signup() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (!validateForm()) return; // If validation fails, don't submit the form
-
+  
     const formData = new FormData(); // FormData object
     formData.append("fullName", input.fullName);
     formData.append("username", input.username);
@@ -55,26 +55,27 @@ function Signup() {
     if (input.file) {
       formData.append("file", input.file);
     }
-
+  
     try {
       const res = await axios.post("http://localhost:8000/api/v1/users/signup", formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
         withCredentials: true, 
       });
-
+  
       if (res.data.success) {
         setAlert({ message: res.data.message || "Signup successful!", severity: "success" }); 
-        setTimeout(() => {
-          navigate("/login")
-        }, 2000);
         
-
+        // Delay the redirection by 3 seconds (3000 milliseconds)
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000); 
       }
     } catch (error) {
       setAlert({ message: "Signup failed. Please try again.", severity: "error" }); // Set error alert
       console.log(error.response.data);
     }
   };
+  
 
   return (
     <>
