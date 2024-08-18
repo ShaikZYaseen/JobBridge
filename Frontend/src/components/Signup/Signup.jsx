@@ -8,6 +8,7 @@ import "./Signup.css";
 import Alert from '@mui/material/Alert';
 import { Button, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
+import { toast } from 'mui-sonner';
 
 function Signup() {
   const navigate = useNavigate();
@@ -20,8 +21,8 @@ function Signup() {
     file: ""
   });
 
-  const [alert, setAlert] = useState({ message: "", severity: "" }); // State for the alert
-  const [errors, setErrors] = useState({}); // State for form validation errors
+  const [alert, setAlert] = useState({ message: "", severity: "" });
+  const [errors, setErrors] = useState({});
 
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -39,14 +40,14 @@ function Signup() {
     if (!input.password) newErrors.password = "Password is required.";
     if (!input.role) newErrors.role = "Role is required.";
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Return true if no errors
+    return Object.keys(newErrors).length === 0;
   };
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (!validateForm()) return; // If validation fails, don't submit the form
-  
-    const formData = new FormData(); // FormData object
+    if (!validateForm()) return;
+
+    const formData = new FormData();
     formData.append("fullName", input.fullName);
     formData.append("username", input.username);
     formData.append("email", input.email);
@@ -55,27 +56,26 @@ function Signup() {
     if (input.file) {
       formData.append("file", input.file);
     }
-  
+
     try {
       const res = await axios.post("http://localhost:8000/api/v1/users/signup", formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
-        withCredentials: true, 
+        withCredentials: true,
       });
-  
+
       if (res.data.success) {
-        setAlert({ message: res.data.message || "Signup successful!", severity: "success" }); 
-        
+        toast.success("Signup successful");
+
         // Delay the redirection by 3 seconds (3000 milliseconds)
         setTimeout(() => {
           navigate("/login");
         }, 3000); 
       }
     } catch (error) {
-      setAlert({ message: "Signup failed. Please try again.", severity: "error" }); // Set error alert
+      setAlert({ message: "Signup failed. Please try again.", severity: "error" });
       console.log(error.response.data);
     }
   };
-  
 
   return (
     <>
@@ -134,7 +134,7 @@ function Signup() {
                   id="password"
                   label="Password"
                   name="password"
-                  type="password" // It's a good practice to hide the password input
+                  type="password"
                   value={input.password}
                   variant="standard"
                   error={!!errors.password}
@@ -154,7 +154,7 @@ function Signup() {
                     onChange={changeEventHandler}
                     name="role"
                     error={!!errors.role}
-                    sx={{ width: '80px', height: '25px' }} // Adjust width and height as needed
+                    sx={{ width: '80px', height: '25px' }}
                   >
                     <MenuItem value="student">Student</MenuItem>
                     <MenuItem value="recruiter">Recruiter</MenuItem>
@@ -167,10 +167,10 @@ function Signup() {
                   <TextField
                     className="small-text-field"
                     type="file"
-                    inputProps={{ accept: ".jpg,.jpeg" }} // Specify accepted file types
+                    inputProps={{ accept: ".jpg,.jpeg" }}
                     onChange={changeFileHandler}
                     variant="standard"
-                    sx={{ marginBottom: "16px" }} // Adjust styling as needed
+                    sx={{ marginBottom: "16px" }}
                   />
                 </div>
                 <div className="submitbtn">
