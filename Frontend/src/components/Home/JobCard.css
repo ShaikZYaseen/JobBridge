@@ -1,0 +1,59 @@
+.card{
+    width: 22rem;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+}
+.card h1{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+}
+.card .country{
+    margin-bottom: 10px;
+}
+.card h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card .badges{
+    text-align:left;
+    margin-top: 10px;
+}
+.card span{
+    margin-right: 10px;
+}
+.card .badge1{
+    border: 0.1px solid grey;
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #166AC5;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.card .badge2{
+    border: 0.1px solid grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 10px;
+    color: red;
+    padding: 4px;
+    font-weight: bold;
+
+    border-radius: 10px;
+}
+
+
+.card .badge3{
+    border: 0.1px solid grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 4px;
+    font-size: 10px;
+    color: purple;
+    font-weight: bold;
+
+    border-radius: 10px;
+}
