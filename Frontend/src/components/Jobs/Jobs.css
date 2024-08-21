@@ -1,0 +1,15 @@
+.jobs-container{
+    margin-top: 70px;
+    margin-left: 0px !important;
+    height: 100vh;
+    overflow-y: auto;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.jobss{
+    display: flex;  
+
+}

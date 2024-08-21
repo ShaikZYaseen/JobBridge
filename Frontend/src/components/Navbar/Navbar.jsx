@@ -47,9 +47,9 @@ function Navbar() {
                 </div>
                 <div className='navbar-content'>
                     <div className='navbar-options'>
-                        <li>Home</li>
-                        <li>Jobs</li>
-                        <li>Browse</li>
+                       <Link className='link' to="/"><li>Home</li></Link> 
+                       <Link className='link' to="/jobs"><li>Jobs</li></Link> 
+                       <Link className='link' to="/"><li>Browse</li></Link> 
                        
                     </div>
                     <div>{

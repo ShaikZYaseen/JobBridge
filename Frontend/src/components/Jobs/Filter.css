@@ -1,0 +1,33 @@
+.filter{
+    height: 120vh;
+    width: 24vw;
+    padding-top: 80px;
+    padding-left: 60px;
+    font-family: sans-serif;
+}
+.filter h2{
+    font-size: 26px;
+    padding-bottom: 15px;
+}
+
+.sec1{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+.filterName{
+    font-size: 15px;
+}
+
+.radioDiv{
+        font-size: 4px;
+}
+
+.cardDiv{
+    margin-top: 20px;
+}
+
+.cardDiv .filterName{
+    margin-top: 100px;
+}

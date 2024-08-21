@@ -1,0 +1,95 @@
+.job{
+    height: 280px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 29px;
+}
+
+.job-one{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.bookmarkIcon{
+    cursor: pointer;
+}
+
+.job-two{
+    display: flex;
+}
+
+.company-img img{
+    height: 40px;
+    width: 40px;
+}
+
+.company-name{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.company-content{
+    padding-left: 13px;
+}
+
+.job-three{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 10px;
+}
+
+.job-four{
+    margin-top: 5px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+
+
+
+.job .badge1{
+    border: 0.1px solid grey;
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #166AC5;
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.job .badge2{
+    border: 0.1px solid grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 10px;
+    color: red;
+    padding: 4px;
+    font-weight: bold;
+    margin-right: 10px;
+
+    border-radius: 10px;
+}
+
+
+.job .badge3{
+    border: 0.1px solid grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 4px;
+    font-size: 10px;
+    color: purple;
+    font-weight: bold;
+
+    border-radius: 10px;
+}
+
+.btns{
+    margin-top: 16px;
+}
