@@ -3,10 +3,10 @@ import "./Filter.css"
 import { FormLabel, Radio } from '@mui/material';
 
 
-const Sidebar = ({ isOpen, onClose }) => {
+const Sidebar = () => {
 
 
-    const fitlerData = [
+    const filterData = [
         {
             fitlerType: "Location",
             array: ["Delhi NCR", "Bangalore", "Hyderabad", "Pune", "Mumbai"]
@@ -29,25 +29,21 @@ const Sidebar = ({ isOpen, onClose }) => {
                 <hr />
 
                 <div>
-                    <h1 className='cardDiv'>{fitlerData.fitlerType}</h1>
-                    {
-                        fitlerData.map((data, index) => (
-                            <div>
-                                <h3 className='filterName'>{data.fitlerType}</h3>
-                                {
-                                    data.array.map((item, idx) => {
-                                        const itemId = `id${index}-${idx}`
-                                        return (
-                                            <div className='radioDiv'>
-                                                <Radio  value={item} id={itemId} />
-                                                <FormLabel htmlFor={itemId}>{item}</FormLabel>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        ))
-                    }
+                    <h1 className='cardDiv'>{filterData.fitlerType}</h1>
+                    {filterData.map((data, index) => (
+                        <div key={`filter-${index}`} className='cardDiv'>
+                            <h3 className='filterName'>{data.filterType}</h3>
+                            {data.array.map((item, idx) => {
+                                const itemId = `id-${index}-${idx}-${item}`; // Ensure uniqueness by combining index, idx, and item
+                                return (
+                                    <div key={itemId} className='radioDiv'>
+                                        <Radio value={item} id={itemId} />
+                                        <FormLabel htmlFor={itemId}>{item}</FormLabel>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    ))}
                 </div>
             </div>
         </>

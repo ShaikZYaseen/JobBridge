@@ -1,0 +1,17 @@
+.browse{
+    margin-top: 70px;
+    padding: 50px;
+    
+}
+
+.browse h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+.jobss{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+

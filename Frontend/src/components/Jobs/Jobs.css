@@ -9,7 +9,13 @@
     justify-content: space-around;
     padding: 20px;
 }
-.jobss{
-    display: flex;  
 
+.jobss{
+    display: flex !important;  
+}
+
+.jobss-one{
+    height: 120vh;
+    width: 30vw;
+    background-color: antiquewhite;
 }

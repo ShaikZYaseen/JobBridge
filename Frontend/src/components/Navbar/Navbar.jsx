@@ -49,7 +49,7 @@ function Navbar() {
                     <div className='navbar-options'>
                        <Link className='link' to="/"><li>Home</li></Link> 
                        <Link className='link' to="/jobs"><li>Jobs</li></Link> 
-                       <Link className='link' to="/"><li>Browse</li></Link> 
+                       <Link className='link' to="/browse"><li>Browse</li></Link> 
                        
                     </div>
                     <div>{
