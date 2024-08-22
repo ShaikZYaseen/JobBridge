@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
 import "./Navbar.css"
 
 //MUi imports
@@ -13,7 +14,8 @@ import { Avatar, Typography } from '@mui/material';
 
 function Navbar() {
 
-
+    const auth = useSelector(state=>state.auth)
+    console.log(auth.loading)
     //MUI methods
     const [anchorEl, setAnchorEl] = useState(null);
     const navigate = useNavigate();
@@ -36,7 +38,7 @@ function Navbar() {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
-    let user = false;
+    let user = !(auth.loading);
 
 
     return (
@@ -81,7 +83,7 @@ function Navbar() {
 
                                         </p>
                                     </Typography>
-                                    <Link><p className='avatar-two avatar-padding'><span><PermIdentityIcon/></span> view profile</p></Link>
+                                    <Link to='/profile'><p className='avatar-two avatar-padding'><span><PermIdentityIcon/></span> view profile</p></Link>
                                     <Link><p className='avatar-two'><span><LogoutIcon/></span>Logout</p></Link>
 
 

@@ -1,8 +1,8 @@
 import React,{useRef} from 'react';
-
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import EastIcon from '@mui/icons-material/East';
+import { useDispatch, useSelector } from 'react-redux';
 
 import JobCard from "./JobCard.jsx";
 
@@ -14,6 +14,9 @@ function Hero() {
   const jobTypes = ["Frontend developer", "Backend developer", "UI/UX Designer", "AI Engineer", "Devops engineer", "Frontend developer", "Backend developer", "UI/UX Designer", "AI Engineer", "Devops engineer"]
 
   const jobListRef = useRef(null);
+
+
+  const loading = useSelector(state=>state.auth)
 
   const scrollLeft = () => {
       if (jobListRef.current) {

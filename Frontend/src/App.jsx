@@ -7,7 +7,7 @@ import Login from './components/Login/Login.jsx'
 import Home from './components/Home/Home.jsx'
 import Jobs from './components/Jobs/Jobs.jsx'
 import Browse from './components/Browse/Browse.jsx'
-
+import Profile from './components/Profile/Profile.jsx'
 
 
 const appRouter = createBrowserRouter([
@@ -30,6 +30,10 @@ const appRouter = createBrowserRouter([
   {
     path:"/browse",
     element : <Browse/>
+  },
+  {
+    path:"/profile",
+    element:<Profile/>
   }
 ])
 

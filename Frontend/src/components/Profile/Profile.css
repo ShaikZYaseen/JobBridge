@@ -1,0 +1,38 @@
+.profile{
+    margin-top: 70px;
+}
+
+.img{
+    height: 50px;
+    width: 50px;
+    margin-right: 30px;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    height: 55vh;
+    width: 77vw;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+
+    margin: auto;
+    padding: 30px 40px;
+    margin-top: 120px;
+}
+
+.boxContent{
+    display: flex;
+}
+.imgContent{
+    display: flex;
+}
+
+.imgcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+}
+
+.editIcon{
+    cursor: pointer;
+}
