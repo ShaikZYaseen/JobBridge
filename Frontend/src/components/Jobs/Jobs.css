@@ -1,3 +1,10 @@
+
+.jobsss{
+    display: flex !important;  
+}
+
+
+
 .jobs-container{
     margin-top: 70px;
     margin-left: 0px !important;
@@ -10,12 +17,9 @@
     padding: 20px;
 }
 
-.jobss{
-    display: flex !important;  
-}
+
 
 .jobss-one{
     height: 120vh;
     width: 30vw;
-    background-color: antiquewhite;
 }

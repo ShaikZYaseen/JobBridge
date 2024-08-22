@@ -8,15 +8,15 @@ const Sidebar = () => {
 
     const filterData = [
         {
-            fitlerType: "Location",
+            filterType: "Location",
             array: ["Delhi NCR", "Bangalore", "Hyderabad", "Pune", "Mumbai"]
         },
         {
-            fitlerType: "Industry",
+            filterType: "Industry",
             array: ["Frontend Developer", "Backend Developer", "FullStack Developer"]
         },
         {
-            fitlerType: "Salary",
+            filterType: "Salary",
             array: ["0-40k", "42-1lakh", "1lakh to 5lakh"]
         },
     ]
@@ -29,10 +29,9 @@ const Sidebar = () => {
                 <hr />
 
                 <div>
-                    <h1 className='cardDiv'>{filterData.fitlerType}</h1>
                     {filterData.map((data, index) => (
                         <div key={`filter-${index}`} className='cardDiv'>
-                            <h3 className='filterName'>{data.filterType}</h3>
+                            <h3 className='filterName'>{data.filterType}</h3> {/* Corrected typo here */}
                             {data.array.map((item, idx) => {
                                 const itemId = `id-${index}-${idx}-${item}`; // Ensure uniqueness by combining index, idx, and item
                                 return (
@@ -44,6 +43,7 @@ const Sidebar = () => {
                             })}
                         </div>
                     ))}
+
                 </div>
             </div>
         </>

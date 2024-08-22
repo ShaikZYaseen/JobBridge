@@ -28,7 +28,7 @@ function Jobs() {
   return (
     <>       
     <Navbar/>
-    <div className="jobss">
+    <div className="jobsss">
       <div className="jobss-one">
       
       <Sidebar />
