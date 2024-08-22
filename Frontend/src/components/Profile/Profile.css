@@ -9,8 +9,7 @@
 }
 
 .box{
-    display: flex;
-    justify-content: space-between;
+    
     height: 55vh;
     width: 77vw;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -35,4 +34,55 @@
 
 .editIcon{
     cursor: pointer;
+}
+
+
+.boxContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.emailIcon{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.emailLine{
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+}
+.phoneIcon{
+    margin-right: 20px;
+}
+
+.phoneLine{
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.skills{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.skillBadge{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.skillWord{
+    margin-right: 8px;
+}
+
+.resumeDiv{
+    margin-top: 20px;
+    font-weight: bold;
 }
