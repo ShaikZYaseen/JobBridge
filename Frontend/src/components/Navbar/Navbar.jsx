@@ -15,7 +15,7 @@ import { Avatar, Typography } from '@mui/material';
 function Navbar() {
 
     const auth = useSelector(state=>state.auth)
-    console.log(auth.loading)
+    console.log(auth.user)
     //MUI methods
     const [anchorEl, setAnchorEl] = useState(null);
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ function Navbar() {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
-    let user = !(auth.loading);
+    let user = Boolean(auth.user);
 
 
     return (

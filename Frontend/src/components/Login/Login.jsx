@@ -48,7 +48,7 @@ function Login() {
 
         setTimeout(() => {
           navigate('/');
-        }, 3000);
+        }, 2000);
       }
     } catch (error) {
       toast.error('Login failed. Please try again.');

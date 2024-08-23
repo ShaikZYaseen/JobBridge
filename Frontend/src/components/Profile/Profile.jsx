@@ -6,6 +6,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import Navbar from "../Navbar/Navbar";
 import Skill from "./Skill";
+import AppliedjobsTable from "./AppliedjobsTable"
 
 function Profile() {
   return (
@@ -39,6 +40,9 @@ function Profile() {
           </span> 
         </div>
         <div className="resumeDiv">Resume</div>
+        </div>
+        <div>
+          <AppliedjobsTable/>
         </div>
       </div>
     </>
