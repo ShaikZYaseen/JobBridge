@@ -1,0 +1,87 @@
+.description{
+    height: 100%;
+    width: 80vw;
+    margin: auto;
+    padding: 50px;
+}
+
+.description .badge1{
+    border: 0.1px solid grey;
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #166AC5;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.description .badge2{
+    border: 0.1px solid grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 10px;
+    color: red;
+    padding: 4px;
+    font-weight: bold;
+
+    border-radius: 10px;
+}
+
+
+.description .badge3{
+    border: 0.1px solid grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 4px;
+    font-size: 10px;
+    color: purple;
+    font-weight: bold;
+
+    border-radius: 10px;
+}
+
+
+.onee{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.two{
+    font-family: sans-serif;
+    background-color: rgb(182, 179, 179);
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+.onee .one h1{
+    margin-bottom: 10px;
+}
+
+
+.twoo{
+    padding-top: 50px;
+    font-family: sans-serif;
+}
+.twoo h1{
+    padding-bottom: 20px;
+}
+
+
+
+
+.twoo-rolee{
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.twoo-role{
+    padding-bottom: 15px;
+}
+
+.boldLetter{
+    font-weight: bold;
+    line-height: 2;
+}
+
+.desc{
+    line-height: 2;
+}
