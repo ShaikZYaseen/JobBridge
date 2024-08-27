@@ -42,7 +42,7 @@ function Hero() {
         <span>Get Your <span className='line2'> Dream Jobs</span></span>
       </p>
       <p className='Hero-line3'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.  Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.  
       </p>
       <p className='Hero-line4'>
         <input type='text' placeholder='Find your dream jobs' />
